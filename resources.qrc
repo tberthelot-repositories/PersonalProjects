@@ -1,0 +1,42 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/add.png</file>
+        <file>images/dismiss.png</file>
+        <file>images/edit.png</file>
+        <file>images/save.png</file>
+        <file>images/arrowup.png</file>
+        <file>images/arrowdown.png</file>
+        <file>images/drag.png</file>
+        <file>images/taball.png</file>
+        <file>images/tabgeneral.png</file>
+        <file>images/list.png</file>
+        <file>images/childactivities.png</file>
+        <file>images/due.png</file>
+        <file>images/notes.png</file>
+        <file>images/weight.png</file>
+        <file>images/lists/backlog.png</file>
+        <file>images/lists/doing.png</file>
+        <file>images/lists/done.png</file>
+        <file>images/lists/ideas.png</file>
+        <file>images/lists/research.png</file>
+        <file>images/lists/todo.png</file>
+        <file>images/lists/shipped.png</file>
+        <file>images/lists/recur.png</file>
+        <file>images/personalprojects.ico</file>
+        <file>images/lists/add.png</file>
+        <file>images/sprint.png</file>
+        <file>images/numeric.png</file>
+        <file>images/charts.png</file>
+        <file>db/personalprojects.db</file>
+        <file>images/sprintico.png</file>
+        <file>images/sprintweek.png</file>
+        <file>images/reports.png</file>
+        <file>images/docs.png</file>
+        <file>images/delete.png</file>
+        <file>images/settings.png</file>
+        <file>images/movedb.png</file>
+        <file>images/backup.png</file>
+        <file>images/restoredb.png</file>
+        <file>images/reload.png</file>
+    </qresource>
+</RCC>

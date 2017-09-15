@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QMainWindowWidget</class>
+ <widget class="QMainWindow" name="QMainWindowWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>574</width>
+    <height>335</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PersonalProjects</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resources.qrc">
+    <normaloff>:/images/personalprojects.ico</normaloff>:/images/personalprojects.ico</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="tabMain">
+      <property name="iconSize">
+       <size>
+        <width>25</width>
+        <height>25</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>574</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="acceptDrops">
+    <bool>false</bool>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+   <property name="nativeMenuBar">
+    <bool>false</bool>
+   </property>
+   <widget class="QMenu" name="menuSettings">
+    <property name="toolTip">
+     <string>Settings</string>
+    </property>
+    <property name="title">
+     <string>Settings</string>
+    </property>
+    <addaction name="actionMove_Database"/>
+    <addaction name="actionBackup_Database"/>
+    <addaction name="actionRestore_Default_Settings"/>
+   </widget>
+   <widget class="QMenu" name="menuEndeavors">
+    <property name="toolTip">
+     <string>Endeavors</string>
+    </property>
+    <property name="title">
+     <string>Endeavors</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionTest"/>
+   </widget>
+   <addaction name="menuSettings"/>
+   <addaction name="menuEndeavors"/>
+  </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/tabgeneral.png</normaloff>:/images/tabgeneral.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add Endeavor</string>
+   </property>
+   <property name="toolTip">
+    <string>Add A New Endeavor</string>
+   </property>
+  </action>
+  <action name="actionMove_Database">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/settings.png</normaloff>:/images/settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>Move Database</string>
+   </property>
+   <property name="toolTip">
+    <string>Use this if you intend to use a syncronization tool such as Dropbox to sync the work between multiple devices.</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::ApplicationSpecificRole</enum>
+   </property>
+  </action>
+  <action name="actionRestore_Default_Settings">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/restoredb.png</normaloff>:/images/restoredb.png</iconset>
+   </property>
+   <property name="text">
+    <string>Restore Default Settings</string>
+   </property>
+   <property name="toolTip">
+    <string>This would delete all your information and restore the default database. </string>
+   </property>
+  </action>
+  <action name="actionBackup_Database">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/images/backup.png</normaloff>:/images/backup.png</iconset>
+   </property>
+   <property name="text">
+    <string>Backup Database</string>
+   </property>
+  </action>
+  <action name="actionTest">
+   <property name="text">
+    <string>Test</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
