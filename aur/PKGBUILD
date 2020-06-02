@@ -1,0 +1,48 @@
+# Maintainer: Thomas Berthelot <thomas dot berthelot at gmail dot com>
+
+pkgname=pkbsuite
+pkgver=0.1.0
+tag="COMMIT-HASH"
+pkgrel=1
+pkgdesc="PKbSuite is a Personal Knowledge Management (PKM) tool forked from the excellent QOwnNotes. It is focused on my needs and to be used with LInux/KDE."
+arch=('i686' 'x86_64' 'armv7h' 'aarch64')
+license=('GPL2')
+groups=('pkbsuite')
+depends=('qt5-base' 'qt5-svg' 'qt5-declarative' 'openssl' 'qt5-xmlpatterns' 'qt5-websockets' 'qt5-x11extras' 'aspell')
+makedepends=('qt5-tools')
+source=("${pkgname}-${pkgver}.tar.xz")
+sha256sums=('a4f2d81da79d4b7a0d0b1bfcccacec738368c53d0dcb001eba5c62402b095c0d')
+
+
+prepare() {
+    cd "pkbsuite-0.1.0"
+    echo "#define RELEASE \"AUR\"" > release.h
+}
+
+build() {
+    cd "pkbsuite-0.1.0"
+    qmake QMAKE_CFLAGS_RELEASE="${CFLAGS}" QMAKE_CXXFLAGS_RELEASE="${CXXFLAGS}" QMAKE_LFLAGS_RELEASE="${LDFLAGS}"
+    make
+}
+
+package() {
+
+    cd "pkbsuite-0.1.0"
+
+
+    # install application
+    install -D -m755 PKbSuite "${pkgdir}/usr/bin/PKbSuite"
+
+    # install visuals
+    install -D -m644 PKbSuite.desktop "${pkgdir}/usr/share/applications/PKbSuite.desktop"
+    install -D -m644 "images/icons/128x128/apps/PKbSuite.png" "${pkgdir}/usr/share/pixmaps/PKbSuite.png"
+    for format in {16x16,24x24,32x32,48x48,64x64,96x96,128x128,256x256,512x512}; do
+        install -D -m644 "images/icons/${format}/apps/PKbSuite.png" "${pkgdir}/usr/share/icons/hicolor/$format/apps/PKbSuite.png"
+    done
+    install -D -m644 "images/icons/scalable/apps/PKbSuite.svg" "${pkgdir}/usr/share/icons/hicolor/scalable/apps/PKbSuite.svg"
+
+    # install languages
+    install -d "${pkgdir}/usr/share/qt5/translations/"
+    install -D -m644 languages/*.qm "${pkgdir}/usr/share/qt5/translations/"
+}
+
